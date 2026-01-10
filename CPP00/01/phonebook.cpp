@@ -28,12 +28,19 @@ void PhoneBook::displayContactRow(int index, const Contact& contact) {
               << "|" << std::endl;
 }
 
+bool PhoneBook::safeGetline(std::string& input) {
+    return static_cast<bool>(std::getline(std::cin, input));
+}
+
 std::string PhoneBook::getInput(const std::string& prompt) {
     std::string input;
     
     while (true) {
         std::cout << prompt;
-        std::getline(std::cin, input);
+        if (!safeGetline(input)) {
+            std::cout << std::endl << "quit" << std::endl;
+            exit(0);
+        }
         if (!input.empty())
             return input;
         std::cout << "Error: Field cannot be empty" << std::endl;
@@ -81,12 +88,19 @@ int main() {
     
     while (true) {
         std::cout << "> ";
-        std::getline(std::cin, command);
+        std::string line;
+        if (!std::getline(std::cin, line)) {
+            std::cout << std::endl << "quit" << std::endl;
+            break;
+        }
+        command = line;
         
         if (command == "ADD") {
             phonebook.addContact();
         } else if (command == "SEARCH") {
             phonebook.searchContacts();
+			// TO-DO AGGIUNGI CHE DEVE PRENDERE UN ARGOMENTO DOPO IL DISPLAY DEI CONTATTI PER
+			// LA VISUALIZZAZIONE DEL CONTATTO SPECIFICATO, FAI ANCHE CONTROLLO DELL INPUT
         } else if (command == "EXIT") {
             break;
         }

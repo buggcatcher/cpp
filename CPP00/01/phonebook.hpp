@@ -1,6 +1,6 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
-
+#include <cstdlib>
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -47,6 +47,7 @@ public:
     PhoneBook();
     void addContact();
     void searchContacts();
+    bool safeGetline(std::string& input);
 };
 
 /*
