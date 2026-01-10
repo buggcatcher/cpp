@@ -1,4 +1,4 @@
-NAME = megaphone
+NAME = phonebook
 
 CXX = c++
 CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98
