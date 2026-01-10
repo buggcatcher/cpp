@@ -1,11 +1,7 @@
-# CPP00 - C++ Beginner Exercises
-
-## Chapter IV
 
 ### Exercise 00: Megaphone
 
-**Exercise:** 00  
-**Turn-in directory:** `ex00/`  
+**Turn-in directory:** `00/`  
 **Files to turn in:** `Makefile`, `megaphone.cpp`  
 **Forbidden functions:** None
 
