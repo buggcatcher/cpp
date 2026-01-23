@@ -20,7 +20,7 @@ Filter Harl's messages based on log levels using a switch statement.
 $> ./harlFilter "WARNING"
 [ WARNING ]
 I think I deserve to have some extra bacon for free.
-I've been coming for years, whereas you started working here just last month.
+Ive been coming for years, whereas you started working here just last month.
 [ ERROR ]
 This is unacceptable! I want to speak to the manager now.
 $> ./harlFilter "I am not sure how tired I am today..."
