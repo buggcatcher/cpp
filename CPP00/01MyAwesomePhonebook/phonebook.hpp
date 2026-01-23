@@ -44,7 +44,6 @@ public:
 };
 
 /*
-usa & dopo std::string per passare tramite riferimento
 usa const nei parametri per non modificare il parametro
 usa const dopo il metodo per non modificare l'oggetto (this)
 */

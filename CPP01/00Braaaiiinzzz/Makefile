@@ -1,9 +1,9 @@
-NAME = phonebook
+NAME = braaiiinzzz.out
 
 CXX = c++
 CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
-SRC = phonebook.cpp
+SRC = main.cpp zombie.cpp newZombie.cpp randomChump.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
