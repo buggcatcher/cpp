@@ -39,6 +39,7 @@ public:
     PhoneBook();
     void addContact();
     void searchContacts();
+    void displayContactDetails(int index);
     bool safeGetline(std::string& input);
     std::string promptField(const std::string& prompt);
 };

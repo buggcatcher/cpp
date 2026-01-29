@@ -1,4 +1,5 @@
 #include "phonebook.hpp"
+#include <sstream>
 
 //quando un costruttore non ha parametri, si chiama costruttore di default
 //costruttore di default Contact
@@ -109,22 +110,51 @@ void PhoneBook::addContact() {
 }
 
 //metodo
+void PhoneBook::displayContactDetails(int index) {
+    if (index < 0 || index >= contactCount || contacts[index].isEmpty()) {
+        std::cout << "Invalid index." << std::endl;
+        return;
+    }
+    const Contact& c = contacts[index];
+    std::cout << "First Name: " << c.getFirstName() << std::endl;
+    std::cout << "Last Name: " << c.getLastName() << std::endl;
+    std::cout << "Nickname: " << c.getNickname() << std::endl;
+    std::cout << "Phone Number: " << c.getPhoneNumber() << std::endl;
+    std::cout << "Darkest Secret: " << c.getDarkestSecret() << std::endl;
+}
+
+//metodo
 void PhoneBook::searchContacts() {
     if (contactCount == 0) {
         std::cout << "Phonebook is empty" << std::endl;
         return;
     }
-    
     std::cout << " ___________________________________________" << std::endl;
     std::cout << "|" << std::setw(10) << "Index"
               << "|" << std::setw(10) << "Name"
               << "|" << std::setw(10) << "Surname"
               << "|" << std::setw(10) << "Nickname"
               << "|" << std::endl;
-    
     for (int i = 0; i < contactCount; i++) {
         displayContactRow(i, contacts[i]);
     }
+    // Richiesta dell'indice all'utente
+    std::string input;
+    std::cout << "\nEnter the index of a contact to view its details: ";
+    std::getline(std::cin, input);
+    if (input.empty() || input.find_first_not_of("12345678") != std::string::npos) {
+        std::cout << "Invalid input." << std::endl;
+        return;
+    }
+    std::istringstream iss(input);  // per convertire la stringa in un intero creo l'oggetto stringstream per leggere l'input come se fosse uno stream 
+    int idx = -1;
+    iss >> idx;
+    idx -= 1;
+    if (iss.fail() || idx < 0 || idx >= contactCount) {
+        std::cout << "Invalid index." << std::endl;
+        return;
+    }
+    displayContactDetails(idx);
 }
 
 int main() {
@@ -144,8 +174,6 @@ int main() {
             phonebook.addContact();
         } else if (command == "SEARCH") {
             phonebook.searchContacts();
-			// TO-DO AGGIUNGI CHE DEVE PRENDERE UN ARGOMENTO DOPO IL DISPLAY DEI CONTATTI PER
-			// LA VISUALIZZAZIONE DEL CONTATTO SPECIFICO, FAI ANCHE CONTROLLO DELL INPUT
         } else if (command == "EXIT" || command == "QUIT") {
             break;
         }

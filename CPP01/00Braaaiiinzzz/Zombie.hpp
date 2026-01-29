@@ -5,9 +5,9 @@ class Zombie {
     private:
         std::string name;
     public:
-        Zombie(const std::string& name); // costruttore verboso
         void announce(void);
-        ~Zombie(); // distruttore verboso
+        Zombie(const std::string& name);
+        ~Zombie();
 };
 
 Zombie* newZombie(std::string name);
