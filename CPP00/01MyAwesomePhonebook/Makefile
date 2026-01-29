@@ -6,7 +6,7 @@ SRC = phonebook.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
-all: $(NAME) $(FLAG) edit-add edit-remove
+all: $(NAME) $(FLAG) edit-remove
 
 $(FLAG):
 	@mkdir -p $(CONFIG)
@@ -26,11 +26,8 @@ fclean: clean
 
 re: fclean all
 
-edit-add:
-    @sed -i '8iall: $(NAME)' Makefile
-
 edit-remove:
-	@sed -i '3d;4d;9d;10d;11d;12d;13d;31d;29d;30d;32d;33d;' Makefile
+	@sed -i '3d;4d;9d;10d;11d;12d;13d;29d;30d;' Makefile
 .PHONY: all clean fclean re
 	rm -f *.out && rm -f *.o
 
