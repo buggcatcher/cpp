@@ -34,7 +34,7 @@ By analyzing the header file `Account.hpp`, the test file `tests.cpp`, and the l
 
 ## Important Notes
 
-⚠️ **Destructor Order**: The order in which destructors are called may differ depending on your compiler/operating system. Therefore, your destructors may be called in reverse order compared to other implementations. This is normal and expected.
+**Destructor Order**: The order in which destructors are called may differ depending on your compiler/operating system. Therefore, your destructors may be called in reverse order compared to other implementations. This is normal and expected.
 
 ## Building and Testing
 
@@ -58,5 +58,14 @@ This exercise covers:
 - And other fundamental C++ features
 
 ---
-
-Good luck! You've got this! 🚀
+  
+    
+    
+tip: use `awk` to inspect the log file or to trace a single caccount
+```bash
+awk -F';' '{sub(/^\[19920104_091532\] /, " ", $1); print $1 "\t" $2 "\t" $3 "\t" $4 "\t" $5; if ($0 ~ /accounts/) print ""}' 19920104_091532.log 
+```
+  
+```bash
+awk -F';' '/index:1/ {sub(/^\[19920104_091532\] /, " ", $1); print $1 "\t" $2 "\t" $3 "\t" $4 "\t" $5}' 19920104_091532.log
+```
