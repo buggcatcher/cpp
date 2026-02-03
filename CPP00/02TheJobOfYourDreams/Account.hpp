@@ -40,17 +40,17 @@ public:
 
 private:
 
-	static int	_nbAccounts;
-	static int	_totalAmount;
-	static int	_totalNbDeposits;
-	static int	_totalNbWithdrawals;
+	static int	_nbAccounts; // check
+	static int	_totalAmount; // check
+	static int	_totalNbDeposits; // check
+	static int	_totalNbWithdrawals; // check
 
 	static void	_displayTimestamp( void );
 
-	int				_accountIndex;
-	int				_amount;
-	int				_nbDeposits;
-	int				_nbWithdrawals;
+	int				_accountIndex; // check
+	int				_amount; // check
+	int				_nbDeposits; // check
+	int				_nbWithdrawals; // check
 
 	Account( void );
 

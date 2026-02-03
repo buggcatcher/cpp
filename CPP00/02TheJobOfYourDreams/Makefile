@@ -3,7 +3,7 @@ NAME = TheJobOfYourDreams.out
 CXX = c++
 CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
-SRC = Account.cpp Account.hpp tests.cpp
+SRC = Account.cpp tests.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
