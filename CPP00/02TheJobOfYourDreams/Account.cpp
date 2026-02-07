@@ -42,11 +42,17 @@ int Account::_totalNbWithdrawals = 0;
 void Account::_displayTimestamp(void) {
     std::time_t t = std::time(NULL);
     std::tm* tm = std::localtime(&t);
-    char buffer[19];
-    
-    std::strftime(buffer, sizeof(buffer), "[%Y%m%d_%H%M%S] ", tm);
-    std::cout << buffer;
+    char buff[20];
+    std::strftime(buff, sizeof(buff), "[%Y%m%d_%H%M%S] ", tm);
+    std::cout << buff;
 }
+
+/*in cpp11 puoi fare a meno del buffer
+void Account::_displayTimestamp(void) {
+    auto t = std::time(nullptr);
+    auto tm = *std::localtime(&t);
+    std::cout << "[" << std::put_time(&tm, "%Y%m%d_%H%M%S") << "] ";
+}*/
 
 int Account::getNbAccounts(void) {
     return Account::_nbAccounts;

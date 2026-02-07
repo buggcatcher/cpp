@@ -1,6 +1,9 @@
+NAME = HiThisBrain.out
+
 CXX = c++
 CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98
-SRC = phonebook.cpp
+
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -15,11 +18,6 @@ clean:
 	rm -f $(OBJ)
 
 fclean: clean
-	rm -f *.out && rm -f *.o
-
-re: fclean all
-
-.PHONY: all clean fclean re
 	rm -f *.out && rm -f *.o
 
 re: fclean all
