@@ -16,21 +16,21 @@ int main( void ) {
 
 	std::cout << Fixed::max( a, b ) << std::endl;
 
-    // Fixed c(12.34f);
+    Fixed c(12.34f);
 
-	// std::cout << --a << std::endl;
-	// std::cout << a-- << std::endl;
+	std::cout << --a << std::endl;
+	std::cout << a-- << std::endl;
 
-	// std::cout << Fixed::min( a, b ) << std::endl;
+	std::cout << Fixed::min( a, b ) << std::endl;
 
-	// std::cout << c << std::endl;
-	// std::cout << c * 0.5f << std::endl;
-	// std::cout << c / 0.5f << std::endl;
+	std::cout << c << std::endl;
+	std::cout << c * 0.5f << std::endl;
+	std::cout << c / 0.5f << std::endl;
 
-	// a = 7.77f;
-	// std::cout << a << std::endl;
-	// std::cout << a + 0.33f << std::endl;
-	// std::cout << a - 0.76f << std::endl;
+	a = 7.77f;
+	std::cout << a << std::endl;
+	std::cout << a + 0.22f << std::endl;
+	std::cout << a - 0.76f << std::endl;
 	
     return 0;
 }
