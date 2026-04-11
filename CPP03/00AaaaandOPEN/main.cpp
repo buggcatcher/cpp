@@ -3,13 +3,13 @@
 int main(void)
 {
 	ClapTrap a("Magikarp");
-	ClapTrap b("Gastly");
+	ClapTrap b("Slowpoke");
 
 
     std::cout << "Magikarp used Splash.\n";
-	a.attack("Gastly");
+	a.attack("Slowpoke");
 
-    std::cout << "Gastly used Curse.\n";
+    std::cout << "Slowpoke is confused.\n";
 	b.takeDamage(3);
 
     std::cout << "Magikarp used Recover.\n";
@@ -17,7 +17,7 @@ int main(void)
 
 	ClapTrap c(a);
     std::cout << "Magikarp used Splash.\n";
-	c.attack("Gastly");
+	c.attack("Slowpoke");
 
 	return 0;
 }
